@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+    <meta name="description" content="Pop balloons with your hands through the camera! Pinch and grab — but watch out for bombs." />
+    <meta name="theme-color" content="#69c8ff" />
+    <title>Pop Pop Popper! 🎈</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="game-canvas" aria-label="Balloon popping play area"></canvas>
+
+    <!-- Camera preview (picture-in-picture). The video element doubles as the
+         input source for hand tracking; the canvas overlays the live
+         hand-skeleton guide on top of it. -->
+    <div id="pip" class="pip pip--hidden" aria-hidden="true">
+      <video id="camera" playsinline muted autoplay></video>
+      <canvas id="hand-guide" class="pip__guide"></canvas>
+      <span class="pip__badge">you!</span>
+    </div>
+
+    <!-- In-game HUD -->
+    <header id="hud" class="hud hud--hidden">
+      <div class="hud__chip hud__score" aria-live="polite">
+        <span class="hud__star">⭐</span><span id="score-value">0</span>
+      </div>
+      <div id="combo-bubble" class="combo combo--hidden" aria-live="polite">
+        <span id="combo-value">x2</span> combo!
+      </div>
+      <div class="hud__right">
+        <div id="lives" class="lives" aria-label="Lives remaining"></div>
+        <button id="btn-sound" class="btn btn--icon" aria-label="Toggle sound">🔊</button>
+        <button id="btn-pause" class="btn btn--icon" aria-label="Pause game">⏸️</button>
+      </div>
+    </header>
+
+    <!-- Start screen -->
+    <section id="screen-start" class="screen">
+      <div class="screen__card start-card">
+        <h1 class="title" aria-label="Pop Pop Popper!">
+          <span class="title__word">
+            <span class="title__letter" style="--i: 0; --c: var(--coral)">P</span><span class="title__letter" style="--i: 1; --c: var(--sun)">O</span><span class="title__letter" style="--i: 2; --c: var(--mint)">P</span>
+          </span>
+          <span class="title__word">
+            <span class="title__letter" style="--i: 3; --c: var(--grape)">P</span><span class="title__letter" style="--i: 4; --c: var(--coral)">O</span><span class="title__letter" style="--i: 5; --c: var(--sky-deep)">P</span>
+          </span>
+          <span class="title__word">
+            <span class="title__letter" style="--i: 6; --c: var(--sun)">P</span><span class="title__letter" style="--i: 7; --c: var(--mint)">O</span><span class="title__letter" style="--i: 8; --c: var(--grape)">P</span><span class="title__letter" style="--i: 9; --c: var(--coral)">P</span><span class="title__letter" style="--i: 10; --c: var(--sky-deep)">E</span><span class="title__letter" style="--i: 11; --c: var(--sun)">R</span><span class="title__letter title__letter--bang" style="--i: 12; --c: var(--coral)">!</span>
+          </span>
+        </h1>
+        <p class="tagline">Pop balloons with your hands — right through the camera!</p>
+
+        <ul class="howto" role="list">
+          <li class="howto__card"><span class="howto__emoji">🤏</span><strong>Pinch</strong><small>squeeze a balloon</small></li>
+          <li class="howto__card"><span class="howto__emoji">✊</span><strong>Grab</strong><small>smash a whole bunch</small></li>
+          <li class="howto__card howto__card--danger"><span class="howto__emoji">💣</span><strong>Bombs</strong><small>don't pop these!</small></li>
+        </ul>
+
+        <div class="start-card__buttons">
+          <button id="btn-start-camera" class="btn btn--primary btn--big">
+            <span class="btn__label">🎥 Play with Camera</span>
+            <span class="btn__loading" hidden>Warming up magic hands…</span>
+          </button>
+          <button id="btn-start-touch" class="btn btn--ghost">👆 Play with touch instead</button>
+        </div>
+        <p class="privacy-note">Your camera stays on your device — nothing is ever uploaded. 🔒</p>
+      </div>
+    </section>
+
+    <!-- Countdown -->
+    <div id="countdown" class="countdown countdown--hidden" aria-hidden="true">
+      <span id="countdown-number">3</span>
+    </div>
+
+    <!-- Pause screen -->
+    <section id="screen-pause" class="screen screen--hidden">
+      <div class="screen__card">
+        <h2 class="screen__heading">Paused ☁️</h2>
+        <div class="screen__buttons">
+          <button id="btn-resume" class="btn btn--primary btn--big">▶️ Keep popping</button>
+          <button id="btn-quit" class="btn btn--ghost">🏠 Back to menu</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game over screen -->
+    <section id="screen-over" class="screen screen--hidden">
+      <div class="screen__card">
+        <h2 class="screen__heading">Game Over!</h2>
+        <p class="final-score"><span id="final-score">0</span></p>
+        <p id="best-score" class="best-score">Best: 0</p>
+        <p id="over-cheer" class="over-cheer">Amazing popping! 🎉</p>
+        <div class="screen__buttons">
+          <button id="btn-again" class="btn btn--primary btn--big">🎈 Play again</button>
+          <button id="btn-home" class="btn btn--ghost">🏠 Menu</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="toast" class="toast toast--hidden" role="status"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
