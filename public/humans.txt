@@ -1,0 +1,10 @@
+/* TEAM */
+  Site: Pop Pop Popper!
+  Contact: rayhan [at] alt.sa.com
+
+/* SITE */
+  Last update: 2026-06-13
+  Language: English
+  Standards: HTML5, CSS3, TypeScript, Canvas 2D, Web Audio API, WebAssembly
+  Components: Vite, MediaPipe Tasks Vision (HandLandmarker)
+  Privacy: all hand tracking runs on-device; no camera data ever leaves the browser

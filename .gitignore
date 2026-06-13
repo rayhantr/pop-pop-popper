@@ -2,3 +2,16 @@ node_modules/
 dist/
 *.local
 .DS_Store
+
+# Generated SEO/PWA raster assets — rebuilt from branding/*.svg on every build
+# (vite-plugin-pwa emits the icons into dist; `npm run prebuild` makes the OG
+# image). The SVG sources in branding/ are the tracked originals.
+public/og-image.png
+public/favicon.ico
+public/pwa-*.png
+public/maskable-*.png
+public/apple-touch-icon-*.png
+branding/favicon.ico
+branding/pwa-*.png
+branding/maskable-*.png
+branding/apple-touch-icon-*.png

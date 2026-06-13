@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- App-icon source for @vite-pwa/assets-generator. Full-bleed sky background
+       so maskable / apple-touch icons read as an intentional square, with the
+       balloon kept inside the centre safe zone. The browser-tab favicon stays
+       the transparent public/favicon.svg. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bfe9ff"/>
+      <stop offset="1" stop-color="#69c8ff"/>
+    </linearGradient>
+    <radialGradient id="balloon" cx="0.38" cy="0.30" r="0.95">
+      <stop offset="0" stop-color="#ff9fb0"/>
+      <stop offset="1" stop-color="#ff5d73"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#sky)"/>
+  <path d="M256 366 q-16 36 0 64" stroke="#b9446a" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <ellipse cx="256" cy="214" rx="132" ry="158" fill="url(#balloon)"/>
+  <path d="M230 358 l52 0 l-26 40 z" fill="#e04a63"/>
+  <ellipse cx="206" cy="148" rx="36" ry="54" fill="#ffffff" opacity="0.45" transform="rotate(-20 206 148)"/>
+</svg>

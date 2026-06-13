@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Social share card (1200x630). Rasterised to public/og-image.png by
+       scripts/og-image.mjs. Text uses a rounded font stack with safe fallbacks
+       so it renders even where Fredoka isn't installed. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d2efff"/>
+      <stop offset="1" stop-color="#7fccff"/>
+    </linearGradient>
+    <style>
+      .title { font-family: 'Fredoka','Baloo 2','Trebuchet MS','Segoe UI',sans-serif; font-weight: 700; }
+      .body  { font-family: 'Fredoka','Trebuchet MS','Segoe UI',sans-serif; font-weight: 500; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#sky)"/>
+
+  <!-- soft sun + clouds -->
+  <circle cx="1120" cy="90" r="120" fill="#fff2b8" opacity="0.7"/>
+  <g fill="#ffffff" opacity="0.85">
+    <ellipse cx="180" cy="120" rx="70" ry="34"/>
+    <ellipse cx="240" cy="110" rx="54" ry="30"/>
+    <ellipse cx="1000" cy="540" rx="90" ry="40"/>
+    <ellipse cx="1080" cy="552" rx="60" ry="30"/>
+  </g>
+
+  <!-- balloon cluster (right) -->
+  <g stroke-linecap="round">
+    <path d="M900 300 q14 70 -30 150" stroke="#b9446a" stroke-width="4" fill="none"/>
+    <path d="M1010 250 q22 80 -10 200" stroke="#9a7a2a" stroke-width="4" fill="none"/>
+    <path d="M985 400 q10 60 -20 110" stroke="#2c8a6a" stroke-width="4" fill="none"/>
+    <path d="M1095 360 q18 60 -8 120" stroke="#6a4fb0" stroke-width="4" fill="none"/>
+    <path d="M905 470 q6 40 -14 70" stroke="#1d6fb0" stroke-width="4" fill="none"/>
+  </g>
+  <g>
+    <ellipse cx="900" cy="230" rx="80" ry="96" fill="#ff5d73"/>
+    <ellipse cx="876" cy="196" rx="20" ry="30" fill="#ffffff" opacity="0.4" transform="rotate(-18 876 196)"/>
+    <ellipse cx="1010" cy="180" rx="66" ry="80" fill="#ffcf3f"/>
+    <ellipse cx="990" cy="152" rx="16" ry="24" fill="#ffffff" opacity="0.4" transform="rotate(-18 990 152)"/>
+    <ellipse cx="985" cy="330" rx="74" ry="90" fill="#4fd9a8"/>
+    <ellipse cx="962" cy="300" rx="18" ry="27" fill="#ffffff" opacity="0.4" transform="rotate(-18 962 300)"/>
+    <ellipse cx="1095" cy="300" rx="60" ry="74" fill="#b48bff"/>
+    <ellipse cx="1077" cy="276" rx="15" ry="22" fill="#ffffff" opacity="0.4" transform="rotate(-18 1077 276)"/>
+    <ellipse cx="905" cy="410" rx="62" ry="76" fill="#2ba6ff"/>
+    <ellipse cx="886" cy="384" rx="15" ry="23" fill="#ffffff" opacity="0.4" transform="rotate(-18 886 384)"/>
+  </g>
+
+  <!-- title + copy (left) -->
+  <text x="80" y="250" class="title" font-size="96">
+    <tspan fill="#ff5d73">Pop</tspan> <tspan fill="#b48bff">Pop</tspan> <tspan fill="#2ba6ff">Popper!</tspan>
+  </text>
+  <text x="82" y="320" class="body" font-size="38" fill="#143a5e">Pop balloons with your hands —</text>
+  <text x="82" y="368" class="body" font-size="38" fill="#143a5e">right through the camera.</text>
+
+  <!-- feature pill -->
+  <rect x="80" y="430" width="560" height="64" rx="32" fill="#ffffff" opacity="0.92"/>
+  <text x="360" y="472" class="title" font-size="28" fill="#143a5e" text-anchor="middle">Free · No download · Plays in your browser</text>
+</svg>

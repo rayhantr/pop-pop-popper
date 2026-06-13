@@ -1,0 +1,5 @@
+# Pop Pop Popper! — open to all crawlers.
+User-agent: *
+Allow: /
+
+Sitemap: https://popr.sindbug.com/sitemap.xml

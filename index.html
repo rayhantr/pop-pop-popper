@@ -3,18 +3,164 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
-    <meta name="description" content="Pop balloons with your hands through the camera! Pinch and grab — but watch out for bombs." />
+
+    <!-- Primary SEO -->
+    <title>Pop Pop Popper! 🎈 Pop Balloons With Your Hands — Free Webcam Game</title>
+    <meta name="description" content="Pop Pop Popper is a free browser game: pop balloons with your bare hands using your webcam. Pinch, grab and dodge bombs — no download, private and on-device." />
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Pop Pop Popper" />
+    <meta name="application-name" content="Pop Pop Popper!" />
+    <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#69c8ff" />
-    <title>Pop Pop Popper! 🎈</title>
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <!-- Paste your Google Search Console token (or remove) after deploying. -->
+    <meta name="google-site-verification" content="REPLACE_WITH_SEARCH_CONSOLE_TOKEN" />
+
+    <!-- Icons (generated from branding/icon.svg by scripts/seo-assets.mjs).
+         The <link rel="manifest"> tag is injected by vite-plugin-pwa. -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
+
+    <!-- Mobile / iOS web-app -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Pop Pop Popper!" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pop Pop Popper!" />
+    <meta property="og:title" content="Pop Pop Popper! — Pop Balloons With Your Hands" />
+    <meta property="og:description" content="A free browser game: pop balloons with your bare hands using your webcam. Pinch, grab, dodge bombs — no download, runs on-device and private." />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/og-image.png" />
+    <meta property="og:image:secure_url" content="%VITE_SITE_URL%/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Pop Pop Popper! — colourful balloons popped with hand gestures" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pop Pop Popper! — Pop Balloons With Your Hands" />
+    <meta name="twitter:description" content="Pop balloons with your bare hands using your webcam. Free, no download, private on-device hand tracking." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/og-image.png" />
+    <meta name="twitter:image:alt" content="Pop Pop Popper! gameplay" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured data: the game, the site, and FAQs (rich-result eligible) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "%VITE_SITE_URL%/#website",
+            "url": "%VITE_SITE_URL%/",
+            "name": "Pop Pop Popper!",
+            "description": "Free browser game: pop balloons with your hands using your webcam.",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "VideoGame",
+            "@id": "%VITE_SITE_URL%/#game",
+            "name": "Pop Pop Popper!",
+            "url": "%VITE_SITE_URL%/",
+            "description": "Pop balloons with your bare hands using your webcam. Pinch to pop one, grab to smash a cluster, and dodge the bombs. Plays with touch too — free, on-device and private.",
+            "image": "%VITE_SITE_URL%/og-image.png",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "%VITE_SITE_URL%/#website" },
+            "applicationCategory": "GameApplication",
+            "applicationName": "Pop Pop Popper!",
+            "genre": ["Casual", "Arcade", "Kids"],
+            "gamePlatform": "Web browser",
+            "operatingSystem": "Any (modern web browser)",
+            "playMode": "SinglePlayer",
+            "browserRequirements": "Requires JavaScript and a modern web browser; webcam optional",
+            "softwareVersion": "1.0.0",
+            "author": { "@type": "Organization", "name": "Pop Pop Popper" },
+            "publisher": { "@type": "Organization", "name": "Pop Pop Popper" },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "%VITE_SITE_URL%/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I play Pop Pop Popper?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pinch your thumb and index finger together to pop a single balloon, or close your fist to smash a whole cluster. Your webcam tracks your hands in real time. No camera? Tap or click the balloons instead."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need a webcam to play?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The camera makes it magical, but there is a full touch and mouse mode, so you can play on any device without a camera."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is my camera video uploaded anywhere?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Never. All hand tracking runs on-device in your browser using MediaPipe. No video or images ever leave your device."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does it work on phones and tablets?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. The game is mobile-responsive and works with both the front-facing camera and touch controls on phones and tablets."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Pop Pop Popper free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. It is completely free, runs in your browser with no download, and can be installed as an app for offline play."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
+    <noscript>
+      <div style="max-width: 42rem; margin: 3rem auto; padding: 1.5rem; font-family: system-ui, sans-serif; color: #143a5e; text-align: center">
+        <h1>Pop Pop Popper! 🎈</h1>
+        <p>
+          Pop Pop Popper is a free browser game where you pop balloons with your bare hands using
+          your webcam — pinch to pop one, grab to smash a bunch, and dodge the bombs. A touch and
+          mouse mode lets you play without a camera, and all hand tracking runs privately on your
+          own device.
+        </p>
+        <p><strong>This game needs JavaScript.</strong> Please enable JavaScript to play.</p>
+      </div>
+    </noscript>
+
     <canvas id="game-canvas" aria-label="Balloon popping play area"></canvas>
 
     <!-- Camera preview (picture-in-picture). The video element doubles as the
