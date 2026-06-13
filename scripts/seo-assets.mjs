@@ -1,6 +1,6 @@
 // Generates every raster SEO/PWA asset from the tracked SVG sources, using
 // sharp (ESM). Outputs into public/ so Vite copies them to dist and precaches
-// them. Run via `npm run generate:assets` (also part of `prebuild`).
+// them. Run via `yarn generate:assets` (also part of `prebuild`).
 //
 //   from branding/icon.svg:
 //     public/pwa-192x192.png, pwa-512x512.png   – manifest "any" icons

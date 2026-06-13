@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 // Camera access needs a secure context. Plain http://localhost already IS
 // one, so normal dev runs on HTTP — no certificate warnings. Self-signed
 // HTTPS is only needed when opening the game from a phone via your LAN IP:
-// use `npm run dev:https` for that.
+// use `yarn dev:https` for that.
 export default defineConfig(({ mode }) => ({
   // Absolute base for the root-domain deploy (https://popr.sindbug.com) so the
   // service worker scope and precache URLs are correct. For subfolder hosting,
@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => ({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
       // Icons are generated from branding/icon.svg by scripts/seo-assets.mjs
-      // (npm run prebuild) and live in public/. The <link rel="manifest"> tag is
+      // (yarn prebuild) and live in public/. The <link rel="manifest"> tag is
       // injected automatically; the favicon/apple-touch <link>s are in index.html.
       manifest: {
         name: 'Pop Pop Popper!',
@@ -108,7 +108,7 @@ export default defineConfig(({ mode }) => ({
         ],
       },
       // Keep the SW out of `vite dev` so camera + HMR work without cache
-      // interference; the production build / `npm run preview` has it for
+      // interference; the production build / `yarn preview` has it for
       // offline testing.
       devOptions: { enabled: false },
     }),

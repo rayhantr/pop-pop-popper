@@ -1,25 +1,44 @@
+<div align="center">
+
+<img src="branding/icon.svg" alt="Pop Pop Popper!" width="128">
+
 # 🎈 Pop Pop Popper!
 
-> Pop balloons with your **bare hands**, right through the camera — a free, private, installable browser game.
+### Pop balloons with your bare hands, right through the camera
 
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)
-![MediaPipe](https://img.shields.io/badge/MediaPipe-Hands-00897B?logo=google&logoColor=white)
-![PWA](https://img.shields.io/badge/PWA-installable%20%26%20offline-5A0FC8?logo=pwa&logoColor=white)
-![Static](https://img.shields.io/badge/100%25-static%20%C2%B7%20no%20backend-success)
-![Privacy](https://img.shields.io/badge/tracking-on--device-brightgreen)
+A free, private, installable browser game you play with hand gestures. Pinch or grab balloons to
+pop them, chain combos, grab golden balloons — and dodge the bombs floating up on little grey strings.
 
-**▶️ Play now: [popr.sindbug.com](https://popr.sindbug.com/)**
+[**▶&nbsp; Play now**](https://popr.sindbug.com/) &nbsp;·&nbsp; [Quick start](#-quick-start) &nbsp;·&nbsp; [How to play](#-how-to-play) &nbsp;·&nbsp; [How tracking works](#-how-hand-tracking-works)
 
-A kid-friendly, web-based balloon popper you play with hand gestures on a laptop or a phone. Pinch or grab balloons to pop them, rack up combos, and dodge the bombs floating up on little grey balloons. Built with **TypeScript + Vite + MediaPipe Hands** and a hand-rolled Canvas 2D engine — no game framework, and no sound assets (every effect is synthesised with the Web Audio API).
+[![Play](https://img.shields.io/badge/play-popr.sindbug.com-69c8ff?style=flat-square)](https://popr.sindbug.com/)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat-square&logo=vite&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Hands-00897B?style=flat-square&logo=google&logoColor=white)
+![PWA](https://img.shields.io/badge/PWA-installable%20%26%20offline-5A0FC8?style=flat-square&logo=pwa&logoColor=white)
+![Static](https://img.shields.io/badge/100%25-static%20%C2%B7%20no%20backend-2ea043?style=flat-square)
+![Privacy](https://img.shields.io/badge/tracking-on--device-2ea043?style=flat-square)
+
+</div>
 
 ---
+
+Built with **TypeScript + Vite + MediaPipe Hands** and a hand-rolled Canvas 2D engine — no game
+framework, and no sound assets (every effect is synthesised with the Web Audio API). The whole thing
+is **100% static** and **private by design**: all hand tracking runs on-device, so no video ever
+leaves the browser.
+
+```
+pinch (thumb + index) ──▶ pop one balloon
+grab (close your fist) ──▶ smash a whole cluster
+no camera?             ──▶ tap / click to pop
+```
 
 ## Contents
 
 - [Highlights](#-highlights)
 - [How to play](#-how-to-play)
-- [Quick start](#-quick-start)
+- [Quick start](#-quick-start) · [Scripts](#scripts)
 - [Deployment](#-deployment)
 - [SEO, social & PWA](#-seo-social--pwa)
 - [How hand tracking works](#-how-hand-tracking-works)
@@ -42,6 +61,8 @@ A kid-friendly, web-based balloon popper you play with hand gestures on a laptop
 - 🔒 **Private by design** — all hand tracking runs **on-device**; no video ever leaves the browser.
 - ⚡ **Installable & offline** — a real PWA you can add to your home screen and play without a connection.
 
+---
+
 ## 🎮 How to play
 
 | Action | Input | Result |
@@ -54,11 +75,15 @@ A kid-friendly, web-based balloon popper you play with hand gestures on a laptop
 
 Chain pops within the combo window to stack a multiplier. You have **3 hearts** — lose them all and it's game over (your best score is remembered).
 
+---
+
 ## 🚀 Quick start
 
+This project uses **Yarn** (Yarn 1.x — Classic).
+
 ```bash
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
 
 Open **`http://localhost:5173`** — the camera works there with no certificate fuss, because browsers treat `localhost` as a secure context.
@@ -66,7 +91,7 @@ Open **`http://localhost:5173`** — the camera works there with no certificate 
 **Testing from a phone** on the same Wi-Fi is the one case that needs HTTPS (browsers only allow camera access on secure origins, and your LAN IP isn't one):
 
 ```bash
-npm run dev:https
+yarn dev:https
 ```
 
 then open the printed `https://192.168.x.x:5173` Network URL on the phone and accept the self-signed certificate warning once.
@@ -75,13 +100,15 @@ then open the printed `https://192.168.x.x:5173` Network URL on the phone and ac
 
 | Script | What it does |
 | --- | --- |
-| `npm run dev` | Dev server on `http://localhost:5173` |
-| `npm run dev:https` | Dev server over self-signed HTTPS (phone camera testing) |
-| `npm run build` | Generate assets → typecheck → production build into `dist/` |
-| `npm run preview` | Serve the production build locally (HTTP) |
-| `npm run preview:https` | Serve the build over self-signed HTTPS |
-| `npm run generate:assets` | Rebuild icons + OG image from `branding/*.svg` |
-| `npm run typecheck` | `tsc --noEmit` only |
+| `yarn dev` | Dev server on `http://localhost:5173` |
+| `yarn dev:https` | Dev server over self-signed HTTPS (phone camera testing) |
+| `yarn build` | Generate assets → typecheck → production build into `dist/` |
+| `yarn preview` | Serve the production build locally (HTTP) |
+| `yarn preview:https` | Serve the build over self-signed HTTPS |
+| `yarn generate:assets` | Rebuild icons + OG image from `branding/*.svg` |
+| `yarn typecheck` | `tsc --noEmit` only |
+
+---
 
 ## 📦 Deployment
 
@@ -92,6 +119,8 @@ The build is **fully static** — deploy `dist/` to any static host (GitHub Page
 - Set your canonical origin in **`.env`** (`VITE_SITE_URL`) before building so all absolute SEO/social URLs resolve correctly.
 
 > `vite.config.ts` sets `base: '/'` for the root-domain deploy. For **subfolder** hosting (e.g. GitHub Pages project sites), switch it back to `'./'` and adjust the PWA `scope` / `start_url` to the subpath.
+
+---
 
 ## 🔎 SEO, social & PWA
 
@@ -105,7 +134,7 @@ VITE_SITE_URL=https://popr.sindbug.com   # no trailing slash
 
 Vite substitutes `%VITE_SITE_URL%` into `index.html` at build time for the `canonical` link, Open Graph / Twitter tags, and the JSON-LD. **Deploying elsewhere?** Change this value, then update the literal URLs in `public/robots.txt`, `public/sitemap.xml` and `public/.well-known/security.txt` to match.
 
-**Auto-generated assets.** Every raster asset is produced from two tracked SVG sources (`branding/icon.svg`, `branding/og-image.svg`) by `scripts/seo-assets.mjs` (via `sharp`). It runs automatically on `prebuild`, or on demand with `npm run generate:assets`, emitting into `public/` (gitignored, rebuilt each build):
+**Auto-generated assets.** Every raster asset is produced from two tracked SVG sources (`branding/icon.svg`, `branding/og-image.svg`) by `scripts/seo-assets.mjs` (via `sharp`). It runs automatically on `prebuild`, or on demand with `yarn generate:assets`, emitting into `public/` (gitignored, rebuilt each build):
 
 - `pwa-192x192.png`, `pwa-512x512.png`, `maskable-icon-512x512.png`, `apple-touch-icon-180x180.png`
 - `favicon.ico` (16/32/48) — the crisp tab icon stays `public/favicon.svg`
@@ -113,9 +142,11 @@ Vite substitutes `%VITE_SITE_URL%` into `index.html` at build time for the `cano
 
 **In the `<head>`** (`index.html`): an SEO-tuned `<title>` + description, `canonical`, `robots`, full Open Graph + Twitter cards, iOS/Android web-app metas, a `<noscript>` fallback, and JSON-LD (`VideoGame` + `WebSite` + `FAQPage`, FAQ rich-result eligible). A `google-site-verification` placeholder is included — paste your Search Console token after deploying (or remove it), then submit `sitemap.xml`.
 
-**Installable + offline.** `vite-plugin-pwa` (config in `vite.config.ts`) generates `manifest.webmanifest` and a Workbox service worker (`registerType: 'autoUpdate'`, auto-registered). The app shell is precached; Google Fonts, the MediaPipe WASM, and the model CDN are runtime-cached. So **touch mode plays fully offline**, and after one online camera session the model is cached for offline camera play too — only the model's *first* download needs the network (it's cross-origin and can't be precached). The SW is off in `vite dev`; test it with `npm run preview`.
+**Installable + offline.** `vite-plugin-pwa` (config in `vite.config.ts`) generates `manifest.webmanifest` and a Workbox service worker (`registerType: 'autoUpdate'`, auto-registered). The app shell is precached; Google Fonts, the MediaPipe WASM, and the model CDN are runtime-cached. So **touch mode plays fully offline**, and after one online camera session the model is cached for offline camera play too — only the model's *first* download needs the network (it's cross-origin and can't be precached). The SW is off in `vite dev`; test it with `yarn preview`.
 
 **Other discovery files** in `public/`: `robots.txt` (with `Sitemap:`), `sitemap.xml` (with image extension), `humans.txt`, and `.well-known/security.txt` (RFC 9116).
+
+---
 
 ## 🧠 How hand tracking works
 
@@ -133,6 +164,8 @@ Coordinates are mirrored to match the selfie view and exponentially smoothed. Pi
 - **Grab wins over pinch** (a closing fist passes through a pinch-like shape), and a held grab only releases once the hand is fully open — fist *and* pinch — so tracking jitter can't end it early.
 
 The camera preview overlays a live skeleton of the 21 landmarks (`src/ui/handGuide.ts`), so players can see the tracker working in real time.
+
+---
 
 ## 🗂️ Project structure
 
@@ -163,6 +196,8 @@ public/                   # robots.txt, sitemap.xml, security.txt, favicon.svg �
 
 Design principles: entities only know how to move and draw themselves; all rules live in `Game`; the DOM layer holds zero game logic; and anything you'd want to tweak while balancing is a named constant in `config.ts`.
 
+---
+
 ## 🎛️ Tuning the game
 
 Open `src/config.ts` and play:
@@ -171,11 +206,15 @@ Open `src/config.ts` and play:
 - Too hard for little hands? Raise the `pop.*` hit radii or lower `spawn.bombChanceMax`.
 - Want a frantic party mode? Drop `spawn.minIntervalMs` and `rampSeconds`.
 
+---
+
 ## 🛠️ Troubleshooting
 
 - **"Couldn't start the camera"** — another app may be using it, or permission was denied. The 👆 touch mode always works.
-- **Camera blocked on a phone via LAN IP** — make sure you're on the `https://` URL; browsers only allow camera on secure origins.
+- **Camera blocked on a phone via LAN IP** — make sure you're on the `https://` URL (`yarn dev:https`); browsers only allow camera on secure origins.
 - **Sluggish tracking on old devices** — the tracker tries the GPU delegate first and falls back to CPU automatically; closing other tabs helps.
+
+---
 
 ## 🧰 Tech stack
 
@@ -185,6 +224,10 @@ Open `src/config.ts` and play:
 - **[Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API)** — synthesised sound, no assets
 - **[vite-plugin-pwa](https://vite-pwa-org.netlify.app/)** + **[sharp](https://sharp.pixelplumbing.com/)** — PWA, service worker & asset generation
 
+---
+
 ## 📄 License
 
 No license file is included yet. If you plan to share or fork this, add one — [MIT](https://choosealicense.com/licenses/mit/) is a sensible default for a project like this.
+
+© Rayhan
