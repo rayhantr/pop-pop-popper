@@ -234,4 +234,4 @@ No license file is included yet. If you plan to share or fork this, add one — 
 
 ---
 
-<p align="center">Bugged by <img src="public/SINDBUG.gif" alt="SINDBUG" height="24"></p>
+<p align="center">Bugged by <a href="https://sindbug.com"><img src="public/SINDBUG.gif" alt="SINDBUG" height="24"></a></p>
