@@ -214,6 +214,15 @@ body {
   color: #8a86ab;
 }
 
+/* Attribution links — sindbug gif + GitHub mark on the start card. */
+.bugged-by a {
+  transition: opacity 0.15s ease;
+}
+
+.bugged-by a:hover {
+  opacity: 0.6;
+}
+
 /* ----------------------------- buttons ---------------------------- */
 
 .btn {
